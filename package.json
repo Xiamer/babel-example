@@ -1,0 +1,38 @@
+{
+  "name": "babel-example",
+  "version": "1.0.0",
+  "description": "babel example",
+  "main": "polyfill.js",
+  "scripts": {
+    "build:polyfill": "rollup -c  rollup.config.polyfill.js",
+    "build:env": "rollup -c  rollup.config.preset.env.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xiamer/babel-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xiamer/babel-example/issues"
+  },
+  "homepage": "https://github.com/Xiamer/babel-example#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "babel-runtime": "^6.26.0",
+    "core-js": "^3.8.3",
+    "install": "^0.13.0",
+    "npm": "^6.14.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "rollup": "^2.36.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^7.0.2"
+  }
+}
