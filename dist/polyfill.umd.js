@@ -3,12 +3,9 @@
 	factory();
 }((function () { 'use strict';
 
-	function unwrapExports (x) {
-		return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
-	}
-
-	function createCommonjsModule(fn, module) {
-		return module = { exports: {} }, fn(module, module.exports), module.exports;
+	function createCommonjsModule(fn) {
+	  var module = { exports: {} };
+		return fn(module, module.exports), module.exports;
 	}
 
 	var _global = createCommonjsModule(function (module) {
@@ -42,7 +39,6 @@
 	var core = module.exports = { version: '2.6.12' };
 	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 	});
-	var _core_1 = _core.version;
 
 	var _isObject = function (it) {
 	  return typeof it === 'object' ? it !== null : typeof it === 'function';
@@ -285,11 +281,6 @@
 	  onFreeze: onFreeze
 	};
 	});
-	var _meta_1 = _meta.KEY;
-	var _meta_2 = _meta.NEED;
-	var _meta_3 = _meta.fastKey;
-	var _meta_4 = _meta.getWeak;
-	var _meta_5 = _meta.onFreeze;
 
 	var _wks = createCommonjsModule(function (module) {
 	var store = _shared('wks');
@@ -5554,7 +5545,6 @@
 	  }
 	}
 
-	var runtime_1 = createCommonjsModule(function (module) {
 	/**
 	 * Copyright (c) 2014-present, Facebook, Inc.
 	 *
@@ -5562,6 +5552,7 @@
 	 * LICENSE file in the root directory of this source tree.
 	 */
 
+	var runtime_1 = createCommonjsModule(function (module) {
 	var runtime = (function (exports) {
 
 	  var Op = Object.prototype;
@@ -6317,7 +6308,6 @@
 	var core = module.exports = { version: '2.6.12' };
 	if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 	});
-	var _core_1$1 = _core$1.version;
 
 	var _aFunction$1 = function (it) {
 	  if (typeof it != 'function') throw TypeError(it + ' is not a function!');
@@ -6495,22 +6485,15 @@
 
 	var global = _core$1.global;
 
-	var lib = createCommonjsModule(function (module) {
-
-
-
-	var _global = _interopRequireDefault(global);
+	var _global$2 = _interopRequireDefault(global);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-	if (_global["default"]._babelPolyfill && typeof console !== "undefined" && console.warn) {
+	if (_global$2["default"]._babelPolyfill && typeof console !== "undefined" && console.warn) {
 	  console.warn("@babel/polyfill is loaded more than once on this page. This is probably not desirable/intended " + "and may have consequences if different versions of the polyfills are applied sequentially. " + "If you do need to load the polyfill more than once, use @babel/polyfill/noConflict " + "instead to bypass the warning.");
 	}
 
-	_global["default"]._babelPolyfill = true;
-	});
-
-	unwrapExports(lib);
+	_global$2["default"]._babelPolyfill = true;
 
 	const p = new Promise((resolve, reject) => {
 	  resolve(100);

@@ -1,9 +1,3 @@
-/*
- * @Author: xiaoguang_10@qq.com
- * @LastEditors: xiaoguang_10@qq.com
- * @Date: 2021-01-21 14:13:54
- * @LastEditTime: 2021-02-01 17:00:01
- */
 
 // 解析 node_modules 中的模块
 import resolve from '@rollup/plugin-node-resolve';
@@ -13,10 +7,10 @@ import { babel, getBabelOutputPlugin } from '@rollup/plugin-babel';
 // import { terser } from 'rollup-plugin-terser';
 
 const dist = './dist/';
-const name = 'preset';
+const name = 'runtime';
 
 export default {
-  input: './src/preset.env.js',
+  input: './src/runtime.js',
   output: [
     {
       file: `${dist}${name}.cjs.js`,
@@ -35,6 +29,7 @@ export default {
   plugins: [
     // commonjs(),
     babel({
+      babelHelpers: 'runtime',
       presets: [[
         '@babel/preset-env',
         {
@@ -47,7 +42,17 @@ export default {
           useBuiltIns: 'usage'
         }
       ]],
+      plugins: [
+        ['@babel/plugin-transform-runtime',
+          {
+            useESModules: true,
+            corejs: {
+              version: 3,
+              proposals: true
+            }
+          }
+        ]
+      ]
     }),
-    // resolve()
-  ]
+  ],
 };
